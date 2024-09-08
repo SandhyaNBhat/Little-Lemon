@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.android);
+    alias(libs.plugins.serialization)
+    id("com.google.devtools.ksp")
+
 }
 
 android {
@@ -59,6 +62,16 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation (libs.androidx.navigation.compose)
+    implementation(libs.gson)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.androidx.room.runtime)
+    implementation ("androidx.compose.runtime:runtime-livedata:1.3.2")
+    ksp("androidx.room:room-compiler:2.5.0")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
